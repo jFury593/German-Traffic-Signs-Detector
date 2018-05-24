@@ -438,6 +438,8 @@ We've been able to reach a maximum accuracy of **96.34%** on the test set.
 
 I test the 3 models to predict German traffic signs, I use 11 random images from the web with different image format (.ppm .png .jpg).
 
+**You can put images here to test the models.**
+
 The images at user folder are the following:
 
 <figure>

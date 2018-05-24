@@ -1,0 +1,7 @@
+click    
+cv2	# Image process	
+numpy
+csv
+matplotlib
+sklearn
+pickle

@@ -1,6 +1,13 @@
 # The German Traffic Sign Detection Benchmark Using Scikit-learn and TensorFlow for kiwi Campus
 
-**German Traffic Signs Detector the deep learning challenge for [Kiwi Campus](https://kiwicampus.com/).**
+### German Traffic Signs Detector the deep learning challenge for [Kiwi Campus](https://kiwicampus.com/).
+
+Kiwi Campus are leaders in the consumer delivery space, being the only company delivering with autonomous robots. The  Traffic Sign Detection is a important part for the develop of autonomus delivery robots.
+
+<p align="center">
+  <img width="300" src="screenshots/kiwi_bot.PNG">
+</p>
+
 
 ## Overview:
 
@@ -14,6 +21,8 @@ This dataset has more than 900 images of 43 classes.
 - **model 1 =** Logistic regression model using scikit-learn. (**85.77%** validation accuracy, and a **89.03%** testing accuracy)
 - **model 2 =** Logistic regression model using TensorFlow. (**86.61%** validation accuracy, and a **89.36%** testing accuracy)
 - **model 3 =** LeNet model using TensorFlow.  (**94.97%** validation accuracy, and a **96.34%** testing accuracy)
+
+The use of this repository is simple, just clone or download and run comands on console.
 
 ## Pipeline architecture:
 - **Download The Data.**
@@ -60,12 +69,9 @@ I create a `download command` that will download all data from [German Traffic S
 
 ### Split data:
 
-<figure>
- <img src="screenshots/SPLIT_DATA.png" width="500" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="500" src="screenshots/SPLIT_DATA.png">
+</p>
 
 ### Balance data:
 
@@ -80,12 +86,9 @@ The increase or the creation of images is done in the following way:
 -  Crop image and resize to 32x32
 -  Create train_file.csv and test_file.csv
 
-<figure>
- <img src="./screenshots/step_generate.png" width="700" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="700" src="./screenshots/step_generate.png">
+</p>
 
 #### Visualize samples of the generated images
 
@@ -93,12 +96,9 @@ The increase or the creation of images is done in the following way:
 -  Second column is a created image.
 -  Third column is a created image.
 
-<figure>
- <img src="./screenshots/Balance dataset.png" width="200" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="250" src="./screenshots/Balance dataset.png">
+</p>
 
 ### Executing download comand:
 
@@ -139,21 +139,15 @@ The train and test folder has `.csv` that content the image ID and their class.
 **Plot a histogram of train folder.**
 
 
-<figure>
- <img src="./screenshots/count_train_ext.png" width="500" alt="Combined Image" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="500" src="./screenshots/count_train_ext.png">
+</p>
 
 **Plot a histogram of test folder.**
 
-<figure>
- <img src="./screenshots/count_test_ext.png" width="500" alt="Combined Image" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="500" src="./screenshots/count_test_ext.png">
+</p>
 
 ---
 
@@ -171,21 +165,16 @@ In this step, we will apply several preprocessing steps to the input images to a
 
 **2. Local Histogram Equalization**: Spreads out the most frequent intensity values in an image, resulting in enhancing images with low contrast. 
 
-<figure>
- <img src="./screenshots/equalized_train.png" width="600" alt="Combined Image" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="600" src="./screenshots/equalized_train.png">
+</p>
+
 
 **3. Normalization**: Normalization is a process that changes the range of pixel intensity values.
 
-<figure>
- <img src="./screenshots/normalized_train.png" width="600" alt="Combined Image" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="600" src="./screenshots/normalized_train.png">
+</p>
 
 ---
 
@@ -215,12 +204,9 @@ LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
 ```
 #### Logistic regression in TensorFlow:
 
-<figure>
- <img src="./screenshots/softmax.png" width="600" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="600" src="./screenshots/softmax.png">
+</p>
 
 ```
 # Parameters
@@ -243,12 +229,9 @@ LeNet-5 is a convolutional network designed for handwritten and machine-printed 
 
 In the paper we can see this structure propose by Yann LeCun:
 
-<figure>
- <img src="./screenshots/lenet.png" width="600" alt="Combined Image" />
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="600" src="./screenshots/lenet.png">
+</p>
 
 Input => Convolution => ReLU => Pooling => Convolution => ReLU => Pooling => FullyConnected => ReLU => FullyConnected
 
@@ -443,26 +426,20 @@ I test the 3 models to predict German traffic signs, I use 11 random images from
 
 The images at user folder are the following:
 
-<figure>
- <img src="./screenshots/user folder.PNG" width="600"/>
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="800" src="./screenshots/user folder.PNG">
+</p>
 
-In this case, I test one model that is The LeNet (model 3), I excecute the following command.
+In this case, I test one model that is The LeNet (model 3), I run the following command.
 
 ```
 python app.py infer -m model_3 -d images/user
 ```
 This command plot the images in the folder and the LeNet predict the class, writting on the top label of each.
 
-<figure>
- <img src="./screenshots/user_test.png" width="1000"/>
- <figcaption>
- <p></p> 
- </figcaption>
-</figure>
+<p align="center">
+  <img width="800" src="./screenshots/user_test.png">
+</p>
 
 We can see that the image of **speed limit 60**, is wrong, the LeNet predict that is **speed limit 80**
 

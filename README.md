@@ -71,7 +71,7 @@ I create a `download command` that will download all data from [German Traffic S
 
 The database has unbalanced files, so I decided to increase the database, in the classes that have less than 15 samples.
 
-The increase of images is done in the following way:
+The increase or the creation of images is done in the following way:
 
 -  Augment borders of image and resize to 80x80
 -  Rotate image
@@ -119,7 +119,7 @@ Train folder: 1212  Test folder: 301
 
 The train and test folder has `.csv` that content the image ID and their class.
 
-`train_file.csv` It has 1212 images (32x32x1).
+`train_file.csv` It has 1212 images (32x32x1) like this:
 
 ```
 0000.ppm	0
@@ -252,13 +252,13 @@ In the paper we can see this structure propose by Yann LeCun:
 
 Input => Convolution => ReLU => Pooling => Convolution => ReLU => Pooling => FullyConnected => ReLU => FullyConnected
 
-Layer 1 (Convolutional): The output shape should be 28x28x6.
+***Layer 1*** (Convolutional): The output shape should be 28x28x6.
 
-Activation. Your choice of activation function.
+Activation (ReLu). Is the activation function.
 
 Pooling. The output shape should be 14x14x6.
 
-Layer 2 (Convolutional): The output shape should be 10x10x16.
+***Layer 2*** (Convolutional): The output shape should be 10x10x16.
 
 Activation. Your choice of activation function.
 
@@ -266,15 +266,15 @@ Pooling. The output shape should be 5x5x16.
 
 Flattening: Flatten the output shape of the final pooling layer such that it's 1D instead of 3D.
 
-Layer 3 (Fully Connected): This should have 120 outputs.
+***Layer 3*** (Fully Connected): This should have 120 outputs.
 
-Activation. Your choice of activation function.
+Activation. The activation function.
 
-Layer 4 (Fully Connected): This should have 84 outputs.
+***Layer 4*** (Fully Connected): This should have 84 outputs.
 
-Activation. Your choice of activation function.
+Activation. The activation function.
 
-Layer 5 (Fully Connected): This should have 10 outputs.
+***Layer 5*** (Fully Connected): This should have 10 outputs.
 
 
 
@@ -295,6 +295,7 @@ Options:
 
 Commands:
   download  Download the GTSDB dataset
+  infer     Infer model
   test      Test model
   train     Train model
 ```
@@ -454,7 +455,7 @@ In this case, I test one model that is The LeNet (model 3), I excecute the follo
 ```
 python app.py infer -m model_3 -d images/user
 ```
-This command plot the images in the folder and the LeNet predict the class.
+This command plot the images in the folder and the LeNet predict the class, writting on the top label of each.
 
 <figure>
  <img src="./screenshots/user_test.png" width="1000"/>
@@ -462,6 +463,10 @@ This command plot the images in the folder and the LeNet predict the class.
  <p></p> 
  </figcaption>
 </figure>
+
+We can see that the image of **speed limit 60**, is wrong, the LeNet predict that is **speed limit 80**
+
+The other predicted images is correct.
 
 
 

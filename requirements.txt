@@ -4,4 +4,5 @@ numpy
 csv
 matplotlib
 sklearn
+skimage
 pickle

@@ -1,11 +1,11 @@
-# The German Traffic Sign Detection Benchmark Using Scikit-learn and TensorFlow for kiwi Campus
+# The German Traffic Sign Detection Benchmark Using TensorFlow for kiwi Campus
 
 ### German Traffic Signs Detector the deep learning challenge for [Kiwi Campus](https://kiwicampus.com/).
 
 Kiwi Campus are leaders in the consumer delivery space, being the only company delivering with autonomous robots. The  Traffic Sign Detection is a important part for the develop of autonomus delivery robots.
 
 <p align="center">
-  <img width="300" src="screenshots/kiwi_bot.PNG">
+  <img width="200" src="screenshots/kiwi_bot.PNG">
 </p>
 
 
